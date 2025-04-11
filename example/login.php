@@ -487,7 +487,21 @@ if (isset($_SESSION['message'])) {
           </form>
         </div>
       </div>
-
+      <!-- Social Login Buttons -->
+      <div class="social-login mb-4">
+        <p class="text-center mb-3">Or sign in with</p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="oauth_login.php?provider=google" class="btn btn-outline-dark">
+            <i class="fab fa-google me-2"></i>Google
+          </a>
+          <a href="oauth_login.php?provider=facebook" class="btn btn-outline-primary">
+            <i class="fab fa-facebook-f me-2"></i>Facebook
+          </a>
+          <a href="oauth_login.php?provider=github" class="btn btn-outline-secondary">
+            <i class="fab fa-github me-2"></i>GitHub
+          </a>
+        </div>
+      </div>
       <div class="auth-footer">
         <p>Don't have an account? <a href="register.php">Create an account</a></p>
       </div>

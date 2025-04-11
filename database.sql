@@ -49,5 +49,11 @@ CREATE TABLE IF NOT EXISTS user_remember_tokens (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
+-- Add OAuth fields to users table
+ALTER TABLE users
+ADD COLUMN oauth_provider VARCHAR(50) NULL,
+ADD COLUMN oauth_id VARCHAR(255) NULL,
+ADD UNIQUE INDEX oauth_index (oauth_provider, oauth_id);
+
 -- Insert default roles
 INSERT INTO roles (id, name, description) VALUES (1, 'User', 'Regular user'), (2, 'Admin', 'Administrator');
